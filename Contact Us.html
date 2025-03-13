@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitascoffee - Contact Us</title>
+  <!-- Importing Google Font for design -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #6F4E37;
+      --secondary-color: #F4E9DC;
+    }
+	
+	  .contact-heading {
+    font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+    .contact-form {
+      background: linear-gradient(135deg, #A1887F, #D7CCC8);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-form:hover {
+      transform: translateY(-5px);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 5px rgba(111, 78, 55, 0.25);
+    }
+	
+	.form-control::placeholder {
+  opacity: 0.6;
+}
+
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: rgba(111, 78, 55, 0.8);
+    }
+    
+    .quick-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .quick-links a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .quick-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-info p {
+      line-height: 1.8;
+      margin: 0 0 1rem 0;
+    }
+    
+    /* New design for the "Contact Us" heading */
+    .contact-heading {
+      font-family: 'Montserrat', sans-serif;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navigation (Present on all pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="https://www.facebook.com/Nitascoffee">
+          <img
+            src="Nitas Coffi Logo.png"
+            alt="Nitascoffee"
+            class="brand-logo d-inline-block align-top"
+            width="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <!-- Home -->
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Home</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="About Us.html"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li>
+                  <a class="dropdown-item" href="About Us.html#about-us"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.facebook.com/Nitascoffee/reviews#reviews"
+                    target="_blank"
+                    >Reviews</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Contact Us.html#contact-us"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Menu Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="menuDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                <li>
+                  <a class="dropdown-item" href="Beverages.html"
+                    >Beverages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Main Dishes.html"
+                    >Main Dishes</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Snacks_Desserts.html"
+                    >Snacks/Desserts</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Services Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li>
+                  <a class="dropdown-item" href="Application.html"
+                    >Application Form</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Feedback.html"
+                    >Feedback Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Order Type Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="orderTypeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Order Type
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="orderTypeDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" target="_blank" rel="noopener noreferrer">Dine-in</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" target="_blank" rel="noopener noreferrer">Delivery</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- Header Section -->
+<header class="hero-section text-white" 
+        style="background: url('FInal.jpg') center -820px/cover no-repeat; filter: brightness(0.8); margin: 0; padding: 0; border: 0; border-radius: 15px;">
+  <div class="container-fluid p-0">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container p-0">
+        <a class="navbar-brand fw-bold" href="#">
+          <!-- Replace with your own logo or text -->
+          <img src="logo.png" alt="Logo" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content position-relative" style="height: 500px;">
+      <!-- Dark overlay for contrast -->
+      <div class="position-absolute start-0 w-100"
+           style="top: -10px; height: calc(112% - 50px); background-color: rgba(0, 0, 0, 0.5); border-radius: 15px;">
+      </div>
+
+      <!-- Text container with adjusted top margin -->
+      <div class="position-absolute start-0 ps-4" 
+           style="top: 46%; transform: translateY(-50%); width: 50%;">
+        <h1 class="display-3 fw-bold" 
+            style="color: #fff; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);">
+          Nita's Coffee
+        </h1>
+        <p class="lead" 
+           style="color: #fff; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); line-height: 1.4;">
+          GOOD COFFEE. GOOD FOOD. GOOD MUSIC = GOOD VIBES~
+        </p>
+      </div>
+
+      <!-- See More Button at Bottom-Right -->
+      <div class="position-absolute bottom-0 end-0 p-4">
+        <a href="https://www.facebook.com/Nitascoffee/" target="_blank" class="btn btn-light">See More</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Sliding Carousel -->
+<div id="coffeeCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Sliding Images 1.png" class="d-block w-100" alt="Coffee 1" style="height: 200px;">
+    </div>
+    <div class="carousel-item">
+      <img src="Sliding Images 2.png" class="d-block w-100" alt="Coffee 2" style="height: 200px;">
+    </div>
+  </div>
+</div>
+
+<!-- Contact Us Section -->
+<div class="container mt-5 pt-5">
+  <!-- Added 'contact-heading' class for custom font and shadow -->
+  <h2 class="mb-4 contact-heading">Contact Us</h2>
+  
+  <form class="row g-3 needs-validation contact-form" novalidate>
+    <div class="col-md-6">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" placeholder="Enter your name" required>
+      <div class="invalid-feedback">Please enter your name.</div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Enter your email" required>
+      <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+    <div class="col-12">
+      <label class="form-label">Message</label>
+      <textarea class="form-control" rows="5" placeholder="Type your message here" required></textarea>
+      <div class="invalid-feedback">Please enter your message.</div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </div>
+  </form>
+</div>
+
+<!-- Image Map with Centered Alignment, Heading, and Added Margin -->
+<div class="row" style="margin-top:70px; margin-bottom:50px;">
+  <div class="col-md-8 mx-auto text-center">
+    <h2 class="mb-4" style="font-weight: bold; font-size: 60px; font-family: 'Arial', sans-serif; color: #6F4E37; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+      Image Map
+    </h2>
+    <img src="Nita's Image Map.png" usemap="#coffeeMap" class="img-fluid rounded-3 d-block mx-auto" width="500" height="500">
+    <map name="coffeeMap">
+      <area shape="poly" coords="90,5,22,147,149,151" href="Beverages.html" alt="Beverages">
+      <area shape="rect" coords="193,11,472,306" href="About Us.html" alt="About Us">
+      <area shape="rect" coords="16,182,147,311" href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" alt="Nita's Location">
+      <area shape="poly" coords="82,339,10,481,151,485" href="Snacks_Desserts.html" alt="Snacks_Desserts">
+      <area shape="rect" coords="184,352,317,479" href="https://www.facebook.com/Nitascoffee/photos" alt="Photos">
+      <area shape="poly" coords="413,348,348,481,481,483" href="Main Dishes.html" alt="Main Dishes">
+    </map>
+  </div>
+</div>
+
+
+
+
+    <!-- Footer (Common to all pages) -->
+    <footer class="bg-dark text-white mt-5 py-4">
+      <div class="container">
+        <div class="row g-5">
+          <!-- About Us Column -->
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p style="text-align: justify;">
+              Nita's Coffee opened and started running on August, 2019 during the
+              pandemic. Started in a mini shop/store in a town house village, then
+              expanded and relocated during 2024. A unique coffee shop with both reggae
+              and cozy vibes. Their quality coffee drinks makes their shop distinct with
+              others. Soup dishes are also an option but only for those who like soups.
+              Having a band playing while enjoying your coffee and snacks are truly a
+              masterpiece of their coffee shop, which tend to attract more couples and
+              students to spend their leisure time inside the coffee shop.
+            </p>
+            <div>
+              <a href="https://www.facebook.com/Nitascoffee" target="_blank">
+                <img
+                  src="Facebook Logo Footer.png"
+                  alt="Facebook"
+                  width="32"
+                  class="me-2"
+                />
+              </a>
+              <a href="https://www.instagram.com/nitascoffee/" target="_blank">
+                <img src="Instagram Logo Footer.png" alt="Instagram" width="32" />
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <ul class="list-unstyled quick-links">
+              <li>
+                <a href="Home.html" class="text-white">Home</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Nitascoffee/reviews" class="text-white">Reviews</a>
+              </li>
+              <li>
+                <a href="About Us.html" class="text-white">About Us</a>
+              </li>
+              <li>
+                <a href="Contact Us.html" class="text-white">Contact Us</a>
+              </li>
+              <li>
+                <a href="Beverages.html" class="text-white">Beverages</a>
+              </li>
+              <li>
+                <a href="Main Dishes.html" class="text-white">Main Dishes</a>
+              </li>
+              <li>
+                <a href="Snacks_Desserts.html" class="text-white">Snacks/Desserts</a>
+              </li>
+              <li>
+                <a href="Application.html" class="text-white"
+                  >Application Form</a
+                >
+              </li>
+              <li>
+                <a href="Feedback.html" class="text-white"
+                  >Feedback Form</a
+                >
+              </li>
+              <li>
+                <a href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" class="text-white">Dine-in</a>
+              </li>              
+			  <li>
+                <a href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" class="text-white">Delivery</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Information Column -->
+          <div class="col-md-4 contact-info">
+            <h5>Contact Info</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p>
+              LOT A, M. Santos Street, Antipolo<br />
+              1870 Rizal, Philippines<br />
+              Phone: +0945 147 3529<br />
+              Email:
+              <a href="mailto:nitascoffee@gmail.com" class="text-white"
+                >nitascoffee@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p class="mb-0 small">
+              &copy; 2025 Christian Iraj Leo Lopez - Nita's Coffee EST.2019
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Form validation
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      forms.forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+
+</body>
+</html>

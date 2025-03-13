@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Lightbox CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary-color: #6F4E37;
+        --secondary-color: #F4E9DC;
+      }
+
+      /* Custom CSS3 Features */
+      .brand-logo {
+        animation: steam 3s infinite;
+        opacity: 0.9;
+      }
+
+      @keyframes steam {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+      }
+
+      .hero-section {
+        background: linear-gradient(
+            135deg,
+            rgba(111, 78, 55, 0.9) 0%,
+            rgba(244, 233, 220, 0.9) 100%
+          ),
+          url("coffee-bg.jpg") center/cover;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border: 15px solid transparent;
+        border-image: url("border-pattern.png") 30 round;
+      }
+
+      .nav-link[data-toggle="dropdown"]:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+      }
+
+      .gallery img[alt~="coffee"] {
+        transition: transform 0.3s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+
+      .quick-links a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .quick-links a:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+      .quick-links li {
+        margin-bottom: 0.5rem; /* Adjust this value as needed */
+      }
+      .contact-info p {
+        line-height: 1.8; /* Adjusts the space between lines */
+        margin: 0 0 1rem 0; /* Adds margin below the paragraph */
+      }
+      .hover-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-effect:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!-- Navigation (Present on all pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="https://www.facebook.com/Nitascoffee">
+          <img
+            src="Nitas Coffi Logo.png"
+            alt="Nitascoffee"
+            class="brand-logo d-inline-block align-top"
+            width="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <!-- Home -->
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Home</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="About Us.html"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li>
+                  <a class="dropdown-item" href="About Us.html#about-us"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.facebook.com/Nitascoffee/reviews#reviews"
+                    target="_blank"
+                    >Reviews</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Contact Us.html#contact-us"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Menu Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="menuDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                <li>
+                  <a class="dropdown-item" href="Beverages.html"
+                    >Beverages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Main Dishes.html"
+                    >Main Dishes</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Snacks_Desserts.html"
+                    >Snacks/Desserts</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Services Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li>
+                  <a class="dropdown-item" href="Application.html"
+                    >Application Form</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Feedback.html"
+                    >Feedback Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Order Type Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="orderTypeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Order Type
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="orderTypeDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" target="_blank" rel="noopener noreferrer">Dine-in</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" target="_blank" rel="noopener noreferrer">Delivery</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+ <!-- Header Section -->
+<header class="hero-section text-white" 
+        style="background: url('FInal.jpg') center -820px/cover no-repeat; filter: brightness(0.8); margin: 0; padding: 0; border: 0; border-radius: 15px;">
+  <div class="container-fluid p-0">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container p-0">
+        <a class="navbar-brand fw-bold" href="#">
+          <!-- Replace with your own logo or text -->
+          <img src="logo.png" alt="Logo" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content position-relative" style="height: 500px;">
+      <!-- Dark overlay for contrast -->
+      <div class="position-absolute start-0 w-100"
+           style="top: -10px; height: calc(112% - 50px); background-color: rgba(0, 0, 0, 0.5); border-radius: 15px;">
+      </div>
+
+      <!-- Text container with adjusted top margin -->
+      <div class="position-absolute start-0 ps-4" 
+           style="top: 46%; transform: translateY(-50%); width: 50%;">
+        <h1 class="display-3 fw-bold" 
+            style="color: #fff; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);">
+          Nita's Coffee
+        </h1>
+        <p class="lead" 
+           style="color: #fff; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); line-height: 1.4;">
+          GOOD COFFEE. GOOD FOOD. GOOD MUSIC = GOOD VIBES~
+        </p>
+      </div>
+
+      <!-- See More Button at Bottom-Right -->
+      <div class="position-absolute bottom-0 end-0 p-4">
+        <a href="https://www.facebook.com/Nitascoffee/" target="_blank" class="btn btn-light">See More</a>
+      </div>
+    </div>
+</header>
+
+<!-- Sliding Carousel -->
+<div id="coffeeCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Sliding Images 1.png" class="d-block w-100" alt="Coffee 1" style="height: 200px;">
+    </div>
+    <div class="carousel-item">
+      <img src="Sliding Images 2.png" class="d-block w-100" alt="Coffee 2" style="height: 200px;">
+    </div>
+  </div>
+</div>
+
+    <!-- Home Page Content Section -->
+    <section class="py-5">
+      <div class="container">
+        <!-- First Row: Image and Welcome Text -->
+        <div class="row align-items-center">
+          <!-- Image Column -->
+          <div class="col-md-6 text-center">
+            <img
+              src="Sliding CarouselImage.jpg"
+              alt="Featured Coffee"
+              class="img-fluid rounded mb-4 mb-md-0"
+              style="max-width: 550px;"
+            />
+          </div>
+          <!-- Welcome Text Column -->
+          <div class="col-md-6">
+            <h2
+              style="font-weight: bold; font-family: 'Georgia', serif; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); font-size: 3rem;"
+            >
+              Welcome to Nita's Coffee
+            </h2>
+            <p
+              style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6;"
+            >
+			where coffee beverage that sooth to your cravings and morning boost using our very own locally made beans from Benguet Farmers. 
+			We made our coffee with tender love & care hands that make your cup more delicious and flavorful that meets your palate satisfaction.
+            </p>
+            <a href="https://www.facebook.com/Nitascoffee" class="btn btn-primary" style="background-color: #654321; border-color: #654321;">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Second Row: Additional Information -->
+        <div class="row" style="margin-top: 3rem;">
+          <!-- Our Craft Card -->
+          <div class="col-md-6 d-flex">
+            <div
+              class="card h-100"
+              style="background: linear-gradient(135deg, #8B4513, #D2B48C); color: #fff; padding: 1.5rem; border: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);"
+            >
+              <h3 style="font-weight: bold; margin-bottom: 1rem;">Our Craft</h3>
+              <p
+                style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6;"
+              >
+                Discover our range of specialty coffees—from classic Americanos and
+                silky lattes to sweet caramel mochas—all crafted with carefully
+                selected beans. Craving something cooler? Enjoy our iced blends,
+                creamy frappes, or fruit-forward smoothies.
+              </p>
+
+              <h4 style="font-weight: bold; margin-top: 1rem;">Brewing Mastery</h4>
+              <ul
+                style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-left: 1rem;"
+              >
+                <li>Single-origin beans from sustainable farms</li>
+                <li>Small-batch roasting for optimal flavor</li>
+                <li>Three distinct brew methods available daily</li>
+              </ul>
+
+              <h4 style="font-weight: bold; margin-top: 1rem;">
+                Culinary Pairings
+              </h4>
+              <ul
+                style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-left: 1rem;"
+              >
+                <li>Freshly baked waffles with seasonal toppings</li>
+                <li>Artisanal cheese boards with local preserves</li>
+                <li>Signature spiced chicken wings (6 heat levels)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- The Experience Card -->
+          <div class="col-md-6 d-flex">
+            <div
+              class="card h-100"
+              style="background: linear-gradient(135deg, #8B4513, #D2B48C); color: #fff; padding: 1.5rem; border: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);"
+            >
+              <h3 style="font-weight: bold; margin-bottom: 1rem;">
+                The Experience
+              </h3>
+              <p
+                style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6;"
+              >
+                Step into our rustic-industrial sanctuary featuring curated comfort
+                and cutting-edge functionality. Our multi-sensory environment blends
+                aromatic coffee notes with tactile materials and ambient acoustics.
+              </p>
+
+              <h4 style="font-weight: bold; margin-top: 1rem;">
+                Design Features
+              </h4>
+              <ul
+                style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-left: 1rem;"
+              >
+                <li>
+                  Reclaimed wood surfaces with ironwork detailing
+                </li>
+                <li>
+                  Adjustable LED lighting for each table, to adjust your lighting ambiance
+                  preference
+                </li>
+                <li>
+                  Living wall with hanging plants &amp; Freedom Walls to express your
+                  emotions and thoughts anonymously
+                </li>
+              </ul>
+
+              <h4 style="font-weight: bold; margin-top: 1rem;">
+                Tech Integration
+              </h4>
+              <ul
+                style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-left: 1rem;"
+              >
+                <li>App-controlled ordering &amp; table service</li>
+                <li>High-speed WiFi (fiber optic)</li>
+                <li>One click app to order online</li>
+                <li>QR code for digital payments and more secure transactions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="margin-top: 4rem;"></div>
+
+    <!-- FEATURED MENU SECTION -->
+    <section class="py-5">
+      <div class="container">
+        <!-- Heading -->
+        <h2
+          class="text-center mb-4"
+          style="font-weight: bold; font-family: 'Georgia', serif; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); font-size: 3rem;"
+        >
+          FEATURED <span style="color: #8B4513;">MENU</span>
+        </h2>
+
+        <!-- Three Featured Images -->
+        <div class="row g-4">
+          <!-- Featured Item 1 -->
+          <div class="col-md-4 text-center">
+            <figure>
+              <img
+                src="featured image 3.jpg"
+                alt="Featured Dish 1"
+                class="img-fluid rounded hover-effect"
+                style="border: 5px solid #C3B091; border-radius: 10px;"
+              />
+              <figcaption
+                style="margin-top: 0.5rem; font-family: 'Arial', sans-serif; font-size: 1.1rem; color: #8B4513;"
+              >
+                Mushroom Truffle Pasta
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Featured Item 2 -->
+          <div class="col-md-4 text-center">
+            <figure>
+              <img
+                src="featured image 1.jpg"
+                alt="Featured Dish 2"
+                class="img-fluid rounded hover-effect"
+                style="border: 5px solid #C3B091; border-radius: 10px;"
+              />
+              <figcaption
+                style="margin-top: 0.5rem; font-family: 'Arial', sans-serif; font-size: 1.1rem; color: #8B4513;"
+              >
+                Caramel Éclair
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Featured Item 3 -->
+          <div class="col-md-4 text-center">
+            <figure>
+              <img
+                src="featured image 2.jpg"
+                alt="Featured Dish 3"
+                class="img-fluid rounded hover-effect"
+                style="border: 5px solid #C3B091; border-radius: 10px;"
+              />
+              <figcaption
+                style="margin-top: 0.5rem; font-family: 'Arial', sans-serif; font-size: 1.1rem; color: #8B4513;"
+              >
+                Cookies &amp; Cream Waffle
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="margin-top: 4rem;"></div>
+
+    <!-- IN-STORE SNEAK PEEK VIEW SECTION -->
+    <section class="py-5">
+      <div class="container">
+        <!-- Heading -->
+        <h2
+          class="text-center mb-4"
+          style="font-weight: bold; font-family: 'Georgia', serif; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); font-size: 3rem;"
+        >
+          IN-STORE SNEAK PEEK VIEW
+        </h2>
+
+        <!-- Photocollage Layout -->
+        <div class="row g-4">
+          <!-- Left Column: In-Store View Item 1 -->
+          <div class="col-md-6 text-center">
+            <a href="https://maps.app.goo.gl/oSG3uNHMLQHx67rM8" target="_blank">
+              <img
+                src="Bg.jpg"
+                alt="In-Store View 1"
+                class="img-fluid rounded"
+                style="border: 5px solid #C3B091; border-radius: 10px;"
+              />
+            </a>
+          </div>
+
+          <!-- Right Column: Nested Row for In-Store View Items 2 and 3 with Caption -->
+          <div class="col-md-6">
+            <div class="row g-4">
+              <!-- In-Store View Item 2 -->
+              <div class="col-12 text-center">
+                <a
+                  href="https://maps.app.goo.gl/oSG3uNHMLQHx67rM8"
+                  target="_blank"
+                >
+                  <img
+                    src="in-store view 2.jpg"
+                    alt="In-Store View 2"
+                    class="img-fluid rounded"
+                    style="border: 5px solid #C3B091; border-radius: 10px;"
+                  />
+                </a>
+              </div>
+              <!-- Caption Text between Image 2 and Image 3 -->
+              <div class="col-12 text-center">
+                <p
+                  style="font-family: 'Georgia', serif; font-weight: bold; font-size: 1.1rem; color: #8B4513; margin-bottom: -16px; margin-top: -16px;"
+                >
+                  Click "any" Images to see google map store location/directions
+                </p>
+              </div>
+              <!-- In-Store View Item 3 -->
+              <div class="col-12 text-center">
+                <a
+                  href="https://maps.app.goo.gl/oSG3uNHMLQHx67rM8"
+                  target="_blank"
+                >
+                  <img
+                    src="in-store view 8.jpg"
+                    alt="In-Store View 3"
+                    class="img-fluid rounded"
+                    style="border: 5px solid #C3B091; border-radius: 10px;"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Landscape Card: Live Music Programming & Enhanced Experience -->
+    <div class="row" style="margin-top: 3rem;">
+      <div class="col-12">
+        <div
+          class="card"
+          style="background: linear-gradient(135deg, #8B4513, #D2B48C); color: #fff; padding: 2rem; border: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);"
+        >
+          <!-- Live Music Programming Section -->
+          <h3 style="font-weight: bold; margin-bottom: 1rem;">
+            Live Music Programming
+          </h3>
+          <p
+            style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6;"
+          >
+            Our stage hosts curated experiences blending local talent with genre
+            fusion:
+          </p>
+          <table
+            style="width: 100%; border-collapse: collapse; font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-top: 1rem;"
+          >
+            <thead>
+              <tr style="background-color: rgba(0, 0, 0, 0.2);">
+                <th
+                  style="padding: 0.5rem; text-align: left; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Day/Time
+                </th>
+                <th
+                  style="padding: 0.5rem; text-align: left; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Performance Style
+                </th>
+                <th
+                  style="padding: 0.5rem; text-align: left; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Featured Elements
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Thursday Nights (7–9 PM)
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  OPM Unplugged Sessions
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  - Acoustic renditions of Eraserheads &amp; Rivermaya<br />
+                  - Debut performances in Waray/Bisaya folk fusion
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Friday Evening (6–10 PM)
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Reggae Jazz Fusion
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  - Horn sections reinterpreting Bob Marley via bossa nova<br />
+                  - Limited edition cannabis-infused cold brew flights
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Sunday Brunch (10 AM–2 PM)
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Roots Revival Series
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  - Reggae covers of OPM hits with steelpan<br />
+                  - Artisanal breakfast bundles with turmeric latte pairings
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Enhanced Experience Add-Ons Section -->
+          <h3 style="font-weight: bold; margin-top: 2rem;">
+            Enhanced Experience Add-Ons
+          </h3>
+          <ul
+            style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-left: 1rem;"
+          >
+            <li>
+              <strong>Barista theater:</strong> Watch small-batch beans roasted in
+              our vintage 1960s Probat drum roaster with free cuppings every 3rd
+              hour
+            </li>
+            <li>
+              <strong>Community canvas:</strong> A rotating art wall featuring local
+              makers’ works (purchasable via QR codes)
+            </li>
+            <li>
+              <strong>Sensory menu:</strong> Pair drinks with curated playlists via
+              QR codes on coasters
+            </li>
+          </ul>
+
+          <!-- Nightly Ambient Programming Section -->
+          <h3 style="font-weight: bold; margin-top: 2rem;">
+            Nightly Ambient Programming
+          </h3>
+          <ul
+            style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-left: 1rem;"
+          >
+            <li>8 AM–12 PM: Bossa nova instrumentals with nature sounds</li>
+            <li>12–3 PM: Lofi OPM beats with kulintang samples</li>
+            <li>3 PM–close: Digitally remastered 1970s Manila sound vinyl rips</li>
+          </ul>
+
+          <p
+            style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-top: 2rem;"
+          >
+            This space evolves weekly with surprise pop-up collaborations between
+            our baristas and guest musicians—follow our reclaimed wood menu board
+            for hand-chalked updates.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Row: Join the Community (Full-Width Landscape Card) -->
+    <div class="row" style="margin-top: 3rem;">
+      <div class="col-12">
+        <div
+          class="card"
+          style="background: linear-gradient(135deg, #8B4513, #D2B48C); color: #fff; padding: 2rem; border: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);"
+        >
+          <h3 style="font-weight: bold; margin-bottom: 1rem;">
+            Join the Community
+          </h3>
+          <p
+            style="font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6;"
+          >
+            We host monthly events to connect neighbors:
+          </p>
+          <table
+            style="width: 100%; border-collapse: collapse; font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; margin-top: 1rem;"
+          >
+            <thead>
+              <tr style="background-color: rgba(0, 0, 0, 0.2);">
+                <th
+                  style="padding: 0.5rem; text-align: left; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Event
+                </th>
+                <th
+                  style="padding: 0.5rem; text-align: left; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Date
+                </th>
+                <th
+                  style="padding: 0.5rem; text-align: left; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Highlights
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Latte Art Workshop
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  First Saturday
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Learn pouring techniques
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Book Swap Social
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Third Wednesday
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Exchange novels over matcha
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Open Mic Night
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Last Friday
+                </td>
+                <td
+                  style="padding: 0.5rem; border: 1px solid rgba(255,255,255,0.3);"
+                >
+                  Showcase poetry or music
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer (Common to all pages) -->
+    <footer class="bg-dark text-white mt-5 py-4">
+      <div class="container">
+        <div class="row g-5">
+          <!-- About Us Column -->
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p style="text-align: justify;">
+              Nita's Coffee opened and started running on August, 2019 during the
+              pandemic. Started in a mini shop/store in a town house village, then
+              expanded and relocated during 2024. A unique coffee shop with both reggae
+              and cozy vibes. Their quality coffee drinks makes their shop distinct with
+              others. Soup dishes are also an option but only for those who like soups.
+              Having a band playing while enjoying your coffee and snacks are truly a
+              masterpiece of their coffee shop, which tend to attract more couples and
+              students to spend their leisure time inside the coffee shop.
+            </p>
+            <div>
+              <a href="https://www.facebook.com/Nitascoffee" target="_blank">
+                <img
+                  src="Facebook Logo Footer.png"
+                  alt="Facebook"
+                  width="32"
+                  class="me-2"
+                />
+              </a>
+              <a href="https://www.instagram.com/nitascoffee/" target="_blank">
+                <img src="Instagram Logo Footer.png" alt="Instagram" width="32" />
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <ul class="list-unstyled quick-links">
+              <li>
+                <a href="Home.html" class="text-white">Home</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Nitascoffee/reviews" class="text-white">Reviews</a>
+              </li>
+              <li>
+                <a href="About Us.html" class="text-white">About Us</a>
+              </li>
+              <li>
+                <a href="Contact Us.html" class="text-white">Contact Us</a>
+              </li>
+              <li>
+                <a href="Beverages.html" class="text-white">Beverages</a>
+              </li>
+              <li>
+                <a href="Main Dishes.html" class="text-white">Main Dishes</a>
+              </li>
+              <li>
+                <a href="Snacks_Desserts.html" class="text-white">Snacks/Desserts</a>
+              </li>
+              <li>
+                <a href="Application.html" class="text-white"
+                  >Application Form</a
+                >
+              </li>
+              <li>
+                <a href="Feedback.html" class="text-white"
+                  >Feedback Form</a
+                >
+              </li>
+              <li>
+                <a href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" class="text-white">Dine-in</a>
+              </li>              
+			  <li>
+                <a href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" class="text-white">Delivery</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Information Column -->
+          <div class="col-md-4 contact-info">
+            <h5>Contact Info</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p>
+              LOT A, M. Santos Street, Antipolo<br />
+              1870 Rizal, Philippines<br />
+              Phone: +0945 147 3529<br />
+              Email:
+              <a href="mailto:nitascoffee@gmail.com" class="text-white"
+                >nitascoffee@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p class="mb-0 small">
+              &copy; 2025 Christian Iraj Leo Lopez - Nita's Coffee EST.2019
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <style>
+      :root {
+          --primary-color: #6F4E37;
+          --secondary-color: #F4E9DC;
+          --gradient-primary: linear-gradient(135deg, #6F4E37 0%, #F4E9DC 100%);
+      }
+
+      .enhanced-table {
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      }
+
+      .table-hover tbody tr {
+          transition: all 0.3s ease;
+          cursor: pointer;
+      }
+
+      .table-hover tbody tr:hover {
+          transform: translateX(10px);
+          background: var(--secondary-color);
+      }
+
+      .menu-map {
+          border: 3px solid transparent;
+          border-image: var(--gradient-primary) 1;
+          border-radius: 12px;
+          transition: transform 0.3s;
+      }
+
+      .menu-map:hover {
+          transform: scale(1.02);
+      }
+
+      .card-img-top {
+          border-radius: 12px 12px 0 0;
+          opacity: 0.9;
+          transition: opacity 0.3s;
+      }
+
+      .card:hover .card-img-top {
+          opacity: 1;
+      }
+
+      .price-badge {
+          background: var(--gradient-primary);
+          font-size: 1.1rem;
+          padding: 0.5rem 1.2rem;
+          border-radius: 25px;
+      }
+
+      .order-form {
+          background: rgba(244, 233, 220, 0.15);
+          border-radius: 15px;
+          border: 2px solid var(--primary-color);
+      }
+
+      .form-control:focus {
+          box-shadow: 0 0 10px rgba(111, 78, 55, 0.25);
+          border-color: var(--primary-color);
+      }
+
+      @keyframes float {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0); }
+      }
+
+      .floating-img {
+          animation: float 3s ease-in-out infinite;
+      }
+
+      .img-overlay-container {
+          position: relative;
+          display: inline-block;
+      }
+      .img-overlay-container .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.6);
+          color: #fff;
+          opacity: 0;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 1rem;
+          border-radius: inherit;
+          transform: translateY(0);
+          pointer-events: none; /* Allow clicks to pass through to the link */
+      }
+      .img-overlay-container:hover .overlay {
+          opacity: 1;
+          transform: translateY(-10px);
+      }
+      .img-overlay-container img {
+          transition: transform 0.3s ease;
+      }
+      .img-overlay-container:hover img {
+          transform: scale(1.05);
+      }
+
+      .quick-links a {
+          text-decoration: none;
+          color: inherit;
+      }
+
+      .quick-links a:hover {
+          text-decoration: none;
+          color: inherit;
+      }
+
+      .quick-links li {
+          margin-bottom: 0.5rem; /* Adjust this value as needed */
+      }
+
+      .contact-info p {
+          line-height: 1.8;   /* Adjusts the space between lines */
+          margin: 0 0 1rem 0;  /* Adds margin below the paragraph */
+      }
+
+  </style>
+</head>
+<body class="bg-light">
+    <!-- Navigation (Present on all pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="https://www.facebook.com/Nitascoffee">
+          <img
+            src="Nitas Coffi Logo.png"
+            alt="Nitascoffee"
+            class="brand-logo d-inline-block align-top"
+            width="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <!-- Home -->
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Home</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="About Us.html"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li>
+                  <a class="dropdown-item" href="About Us.html#about-us"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.facebook.com/Nitascoffee/reviews#reviews"
+                    target="_blank"
+                    >Reviews</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Contact Us.html#contact-us"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Menu Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="menuDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                <li>
+                  <a class="dropdown-item" href="Beverages.html"
+                    >Beverages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Main Dishes.html"
+                    >Main Dishes</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Snacks_Desserts.html"
+                    >Snacks/Desserts</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Services Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li>
+                  <a class="dropdown-item" href="Application.html"
+                    >Application Form</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Feedback.html"
+                    >Feedback Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Order Type Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="orderTypeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Order Type
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="orderTypeDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" target="_blank" rel="noopener noreferrer">Dine-in</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" target="_blank" rel="noopener noreferrer">Delivery</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- Header Section -->
+<header class="hero-section text-white" 
+        style="background: url('FInal.jpg') center -820px/cover no-repeat; filter: brightness(0.8); margin: 0; padding: 0; border: 0; border-radius: 15px;">
+  <div class="container-fluid p-0">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container p-0">
+        <a class="navbar-brand fw-bold" href="#">
+          <!-- Replace with your own logo or text -->
+          <img src="logo.png" alt="Logo" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content position-relative" style="height: 500px;">
+      <!-- Dark overlay for contrast -->
+      <div class="position-absolute start-0 w-100"
+           style="top: -10px; height: calc(112% - 50px); background-color: rgba(0, 0, 0, 0.5); border-radius: 15px;">
+      </div>
+
+      <!-- Text container with adjusted top margin -->
+      <div class="position-absolute start-0 ps-4" 
+           style="top: 46%; transform: translateY(-50%); width: 50%;">
+        <h1 class="display-3 fw-bold" 
+            style="color: #fff; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);">
+          Nita's Coffee
+        </h1>
+        <p class="lead" 
+           style="color: #fff; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); line-height: 1.4;">
+          GOOD COFFEE. GOOD FOOD. GOOD MUSIC = GOOD VIBES~
+        </p>
+      </div>
+
+      <!-- See More Button at Bottom-Right -->
+      <div class="position-absolute bottom-0 end-0 p-4">
+        <a href="https://www.facebook.com/Nitascoffee/" target="_blank" class="btn btn-light">See More</a>
+      </div>
+    </div>
+</header>
+
+<!-- Sliding Carousel -->
+<div id="coffeeCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Sliding Images 1.png" class="d-block w-100" alt="Coffee 1" style="height: 200px;">
+    </div>
+    <div class="carousel-item">
+      <img src="Sliding Images 2.png" class="d-block w-100" alt="Coffee 2" style="height: 200px;">
+    </div>
+  </div>
+</div>
+
+<!-- Menu Page Content -->
+<div class="container mt-5 pt-5">
+
+  <!-- Main Dishes Section -->
+  <section id="pastries" class="mt-5">
+    <h2 class="display-4 mb-4" style="font-weight: bold; font-family: 'Georgia', serif; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 3rem; text-align: center;">
+    "BEVERAGES"
+    </h2>
+    
+    <!-- Row 1: Centered Card 1 -->
+    <div class="row g-4">
+      <div class="col-12 text-center">
+        <div class="card d-inline-block border-0 shadow-sm" style="max-width: 50%; background-color: #B87333;">
+          <a href="Menu 2.jpg" data-lightbox="pastries" data-title="PHYSICAL / IN-STORE MENU">
+            <img src="Menu 2.jpg" class="img-fluid floating-img" alt="PHYSICAL / IN-STORE MENU" style="border: 5px solid #C3B091; border-radius: 10px;">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Georgia', serif; font-size: 2rem; font-weight: bold; color: #fff; letter-spacing: 2px; text-transform: uppercase; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">
+              PHYSICAL / IN-STORE MENU
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inserted Text Block -->
+    <div class="text-center my-4">
+      <p style="margin-top: 3rem; font-size: 2.6rem; font-family: 'Georgia', serif; color: #6F4E37; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-weight: bold;">
+        BEST SELLING BEVERAGES/CUSTOMERS CHOICE
+      </p>
+    </div>
+
+<!-- Collage Container -->
+<div style="position: relative; width: 100%; height: 900px; background: #f8f8f8; margin-bottom: 24rem;">
+
+  <!-- Image 1 -->
+  <div class="img-overlay-container" style="position: absolute; top: 0; left: 0; width: 40%;">
+    <a href="BEverage.jpg" data-lightbox="pastries" data-title="Ice Strawberry Matcha Latte">
+      <img src="BEverage.jpg" alt="Ice Strawberry Matcha Latte" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: -6px; left: -7px; width: 102.5%; height: 50%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem;">Ice Strawberry Matcha Latte</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 0;">
+        Experience the harmonious fusion of East meets West with our Ice Strawberry Matcha Latte, where the vibrant essence of green tea meets the luscious sweetness of strawberries, all blended with creamy milk and served chilled to perfection.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 2px solid #fff; border-radius: 5px; font-weight: bold; margin-top: 1rem;">
+        Php 125.00
+      </div>
+    </div>
+  </div>
+
+  <!-- Image 2 -->
+  <div class="img-overlay-container" style="position: absolute; top: 5%; left: 45%; width: 40%;">
+    <a href="Nita's Classic Coffee.jpg" data-lightbox="pastries" data-title="Nita's Classic Coffee">
+      <img src="Nita's Classic Coffee.jpg" alt="Nita's Classic Coffee" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: 0; left: -1.5%; width: 103%; height: 60%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem;">Nita's Classic Coffee</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 0;">
+        A rich and satisfying coffee experience, featuring a blend of expertly roasted beans, served hot with a warm and inviting atmosphere along with a classic latte art that makes every sip feel like home.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 2px solid #fff; border-radius: 5px; font-weight: bold; margin-top: 1rem;">
+        Php 85.00
+      </div>
+    </div>
+  </div>
+
+  <!-- Image 3 -->
+  <div class="img-overlay-container" style="position: absolute; top: 40%; left: 5%; width: 30%;">
+    <a href="Hot Matcha Latte Zoomed Fits.jpg" data-lightbox="pastries" data-title="Matcha Milk Latte">
+      <img src="Hot Matcha Latte Zoomed Fits.jpg" alt="Matcha Milk Latte" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: 0.8%; left: -4px; width: 102%; height: 80%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem; font-size: 25px">Matcha Milk Latte</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 0;">
+        Indulge in the serene harmony of matcha and milk, where the subtle bitterness of green tea meets the velvety smoothness of creamy goodness, crafting a moment of tranquility in every sip.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 2px solid #fff; border-radius: 5px; font-weight: bold; margin-top: 1rem;">
+        Php 110.00
+      </div>
+    </div>
+  </div>
+
+  <!-- Image 4 -->
+  <div class="img-overlay-container" style="position: absolute; top: 50%; left: 40%; width: 35%;">
+    <a href="Beverahes.jpg" data-lightbox="pastries" data-title="Mango Smoothie">
+      <img src="Beverahes.jpg" alt="Mango Smoothie" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: -0.8%; left: -4.5px; width: 102.5%; height: 50%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem;">Mango Smoothie</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 0;">
+        A vibrant and refreshing tropical treat, blending the sweetness of ripe mango with creamy goodness, perfect for quenching your thirst and satisfying your sweet tooth.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 2px solid #fff; border-radius: 5px; font-weight: bold; margin-top: 1rem;">
+        Php 110.00
+      </div>
+    </div>
+  </div>
+
+  <!-- Image 5 -->
+  <div class="img-overlay-container" style="position: absolute; top: 70%; left: 10%; width: 30%;">
+    <a href="Neverages.jpg" data-lightbox="pastries" data-title="KitKat Milkshake">
+      <img src="Neverages.jpg" alt="KitKat Milkshake" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: -0.5%; left: -4.9px; width: 102.2%; height: 70%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem;">KitKat Milkshake</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 0;">
+        Indulge in the ultimate chocolate fantasy with our Chocolate KitKat milkshake, blending rich, velvety chocolate with the satisfying crunch of KitKat, creating a decadent treat that's as refreshing as it is indulgent.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 2px solid #fff; border-radius: 5px; font-weight: bold; margin-top: 1rem;">
+        Php 130.00
+      </div>
+    </div>
+  </div>
+
+  <!-- Image 6 -->
+  <div class="img-overlay-container" style="position: absolute; top: 15%; left: 75%; width: 20%;">
+    <a href="Classic Iced Coffee Latter.jpg" data-lightbox="pastries" data-title="Iced Coffee Latte">
+      <img src="Classic Iced Coffee Latter.jpg" alt="Iced Coffee Latte" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: 10px; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem; font-size: 20px;">Iced Coffee Latte</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 0; font-size: 12px;">
+        Revitalize your senses with our Iced Coffee Latte, a masterful blend of rich espresso, velvety milk, and a touch of sweetness, served chilled to perfection and guaranteed to awaken your day with every refreshing sip.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 1px solid #fff; border-radius: 5px; font-weight: bold; font-size: 12px; margin-top: 1rem;">
+        Php 100.00
+      </div>
+    </div>
+  </div>
+
+  <!-- Image 7 -->
+  <div class="img-overlay-container" style="position: absolute; top: 55%; left: 75%; width: 20%;">
+    <a href="Mocha Iced Coffee1.jpg" data-lightbox="pastries" data-title="Caramel Milkshake">
+      <img src="Mocha Iced Coffee1.jpg" alt="Caramel Milkshake" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: 10px; left: 0; width: 100%; height: 99.5%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem; font-size: 15px;">Caramel Milkshake</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 00; font-size: 10px;">
+        Escape to a world of decadent bliss with our Caramel, a sumptuous fusion of rich caramel, bold espresso, and creamy texture, blended to perfection and served chilled, offering a refreshing escape from the ordinary in every velvety sip.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 1px solid #fff; border-radius: 5px; font-weight: bold; font-size: 12px; margin-top: 1rem;">
+        Php 120.00
+      </div>
+    </div>
+  </div>
+
+  <!-- Image 8 -->
+  <div class="img-overlay-container" style="position: absolute; top: 80%; left: 65%; width: 30%;">
+    <a href="Beverages.jpg" data-lightbox="pastries" data-title="Lemon Drink">
+      <img src="Beverages.jpg" alt="Lemon Drink" style="width: 100%; border: 5px solid #C3B091; border-radius: 10px; display: block;">
+    </a>
+    <div class="overlay" style="position: absolute; top: 0.6%; left: 0; width: 101%; height: 60%; background-color: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 1rem; box-sizing: border-box;">
+      <h1 style="margin-bottom: 1rem;">Lemon Drink</h1>
+      <span style="display: inline-block; border-top: 2px solid #fff; border-bottom: 2px solid #fff; padding: 1rem 0;">
+        Brighten your day with our refreshing Lemon Drink, a zesty blend of freshly squeezed lemons, sweetened to perfection, and infused with a hint of citrus magic, guaranteed to quench your thirst and uplift your spirits with every revitalizing sip.
+      </span>
+      <div style="display: inline-block; background-color: #fff; color: #000; padding: 0.5rem 1rem; border: 2px solid #fff; border-radius: 5px; font-weight: bold; margin-top: 1rem;">
+        Php 85.00
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Beverages Section -->
+<section id="beverages" class="py-5">
+  <div class="container">
+    <!-- Heading -->
+    <h2 class="display-4 mb-4" style="font-weight: bold; font-family: 'Georgia', serif; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 3rem; text-align: center;">
+      LONGEST "ORIGINAL" BEVERAGES
+    </h2>
+
+    <!-- Three Beverage Cards -->
+    <div class="row g-4">
+      <!-- Beverage Card 1 -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="card h-100 border-0 shadow-sm">
+          <a href="Cookies & Cream Final.png" data-lightbox="beverages" data-title="Oreo Frappe">
+            <img src="Cookies & Cream Final.png" class="card-img-top floating-img" alt="Oreo Frappe" style="border: 5px solid #C3B091; border-radius: 10px;">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Oreo Frappe</h5>
+            <p class="card-text">Indulge in the whimsical delight of our Oreo Frappe, where the velvety smoothness of vanilla ice cream meets the playful crunch of cookies, blended to perfection and served chilled.</p>
+            <span class="price-badge text-white">₱135.00</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Beverage Card 2 -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="card h-100 border-0 shadow-sm">
+          <a href="Matcha Frappe.jpg" data-lightbox="beverages" data-title="Matcha Frappe">
+            <img src="Matcha Frappe.jpg" class="card-img-top floating-img" alt="Matcha Frappe" style="border: 5px solid #C3B091; border-radius: 10px;">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Matcha Frappe</h5>
+            <p class="card-text">Escape to a serene oasis with our Matcha Frappe, a refreshing blend of vibrant green tea, creamy texture, and a hint of sweetness, expertly crafted to invigorate your senses and quench your thirst.</p>
+            <span class="price-badge text-white">₱150.00</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Beverage Card 3 -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="card h-100 border-0 shadow-sm">
+          <a href="Strawberry Frappe.png" data-lightbox="beverages" data-title="Strawberry Frappe">
+            <img src="Strawberry Frappe.png" class="card-img-top floating-img" alt="Strawberry Frappe" style="border: 5px solid #C3B091; border-radius: 10px;">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Strawberry Frappe</h5>
+            <p class="card-text">Indulge in the sweet essence of summer with our Strawberry Frappe, a vibrant blend of ripe strawberries, creamy texture, and a hint of sweetness, expertly crafted to transport you to a world of pure bliss.</p>
+            <span class="price-badge text-white">₱135.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Title Header for Specials Carousel -->
+  <div class="text-center my-4">
+    <h2 style="font-family: 'Georgia', serif; font-weight: bold; font-size: 60px; color: #6F4E37;">
+      "Seasonal BEVERAGE"
+    </h2>
+  </div>
+
+  <!-- Specials Carousel (Optional) -->
+  <div id="specialsCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner rounded-4">
+      <div class="carousel-item active">
+        <img src="Themakeng.jpg" class="d-block w-100" alt="Seasonal Special">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-pill">
+          <h5>Banana Chocolate Drizzle Iced Mocha</h5>
+          <p>A luscious fusion of espresso, creamy milk, chocolate sauce, and ripe banana, all crowned with whipped cream—perfect for a sweet pick-me-up.</p>
+        </div>
+      </div>
+      <!-- Additional carousel items can be added here -->
+    </div>
+  </div>
+</div>
+
+    <!-- Footer (Common to all pages) -->
+    <footer class="bg-dark text-white mt-5 py-4">
+      <div class="container">
+        <div class="row g-5">
+          <!-- About Us Column -->
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p style="text-align: justify;">
+              Nita's Coffee opened and started running on August, 2019 during the
+              pandemic. Started in a mini shop/store in a town house village, then
+              expanded and relocated during 2024. A unique coffee shop with both reggae
+              and cozy vibes. Their quality coffee drinks makes their shop distinct with
+              others. Soup dishes are also an option but only for those who like soups.
+              Having a band playing while enjoying your coffee and snacks are truly a
+              masterpiece of their coffee shop, which tend to attract more couples and
+              students to spend their leisure time inside the coffee shop.
+            </p>
+            <div>
+              <a href="https://www.facebook.com/Nitascoffee" target="_blank">
+                <img
+                  src="Facebook Logo Footer.png"
+                  alt="Facebook"
+                  width="32"
+                  class="me-2"
+                />
+              </a>
+              <a href="https://www.instagram.com/nitascoffee/" target="_blank">
+                <img src="Instagram Logo Footer.png" alt="Instagram" width="32" />
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <ul class="list-unstyled quick-links">
+              <li>
+                <a href="Home.html" class="text-white">Home</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Nitascoffee/reviews" class="text-white">Reviews</a>
+              </li>
+              <li>
+                <a href="About Us.html" class="text-white">About Us</a>
+              </li>
+              <li>
+                <a href="Contact Us.html" class="text-white">Contact Us</a>
+              </li>
+              <li>
+                <a href="Beverages.html" class="text-white">Beverages</a>
+              </li>
+              <li>
+                <a href="Main Dishes.html" class="text-white">Main Dishes</a>
+              </li>
+              <li>
+                <a href="Snacks_Desserts.html" class="text-white">Snacks/Desserts</a>
+              </li>
+              <li>
+                <a href="Application.html" class="text-white"
+                  >Application Form</a
+                >
+              </li>
+              <li>
+                <a href="Feedback.html" class="text-white"
+                  >Feedback Form</a
+                >
+              </li>
+              <li>
+                <a href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" class="text-white">Dine-in</a>
+              </li>              
+			  <li>
+                <a href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" class="text-white">Delivery</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Information Column -->
+          <div class="col-md-4 contact-info">
+            <h5>Contact Info</h5>
+            <!-- Changed margin-top from -6px to 0px -->
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p>
+              LOT A, M. Santos Street, Antipolo<br />
+              1870 Rizal, Philippines<br />
+              Phone: +0945 147 3529<br />
+              Email:
+              <a href="mailto:nitascoffee@gmail.com" class="text-white"
+                >nitascoffee@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p class="mb-0 small">
+              &copy; 2025 Christian Iraj Leo Lopez - Nita's Coffee EST.2019
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+    // Initialize Lightbox with custom options
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'positionFromTop': 20
+    });
+
+    // Form validation
+    (() => {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation')
+        forms.forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })();
+</script>
+</body>
+</html>

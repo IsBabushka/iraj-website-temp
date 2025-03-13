@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitascoffee - Our Story</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #6F4E37;
+      --secondary-color: #F4E9DC;
+    }
+    .fade-in-text {
+      opacity: 0;
+      animation: galleryEntrance 0.6s ease forwards;
+      animation-delay: 0.2s;
+    }
+    .floating-box {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+    }
+    .floating-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+    .gradient-text {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .feature-list li {
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+    .feature-list li:hover {
+      transform: translateX(10px);
+      background: rgba(111, 78, 55, 0.05);
+    }
+    .bullet {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      position: relative;
+    }
+    .bullet::before {
+      content: '✓';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+    @keyframes galleryEntrance {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hover-glow:hover {
+      box-shadow: 0 4px 15px rgba(111, 78, 55, 0.1);
+    }
+    .quick-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .quick-links a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+    .quick-links li {
+      margin-bottom: 0.5rem;
+    }
+    .contact-info p {
+      line-height: 1.8;
+      margin: 0 0 1rem 0;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navigation (Present on all pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="https://www.facebook.com/Nitascoffee">
+          <img
+            src="Nitas Coffi Logo.png"
+            alt="Nitascoffee"
+            class="brand-logo d-inline-block align-top"
+            width="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <!-- Home -->
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Home</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="About Us.html"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li>
+                  <a class="dropdown-item" href="About Us.html#about-us"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.facebook.com/Nitascoffee/reviews#reviews"
+                    target="_blank"
+                    >Reviews</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Contact Us.html#contact-us"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Menu Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="menuDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                <li>
+                  <a class="dropdown-item" href="Beverages.html"
+                    >Beverages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Main Dishes.html"
+                    >Main Dishes</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Snacks_Desserts.html"
+                    >Snacks/Desserts</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Services Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li>
+                  <a class="dropdown-item" href="Application.html"
+                    >Application Form</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Feedback.html"
+                    >Feedback Form</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Order Type Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="orderTypeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Order Type
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="orderTypeDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" target="_blank" rel="noopener noreferrer">Dine-in</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" target="_blank" rel="noopener noreferrer">Delivery</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- Header Section -->
+<header class="hero-section text-white" 
+        style="background: url('FInal.jpg') center -820px/cover no-repeat; filter: brightness(0.8); margin: 0; padding: 0; border: 0; border-radius: 15px;">
+  <div class="container-fluid p-0">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container p-0">
+        <a class="navbar-brand fw-bold" href="#">
+          <!-- Replace with your own logo or text -->
+          <img src="logo.png" alt="Logo" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content position-relative" style="height: 500px;">
+      <!-- Dark overlay for contrast -->
+      <div class="position-absolute start-0 w-100"
+           style="top: -10px; height: calc(112% - 50px); background-color: rgba(0, 0, 0, 0.5); border-radius: 15px;">
+      </div>
+
+      <!-- Text container with adjusted top margin -->
+      <div class="position-absolute start-0 ps-4" 
+           style="top: 46%; transform: translateY(-50%); width: 50%;">
+        <h1 class="display-3 fw-bold" 
+            style="color: #fff; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);">
+          Nita's Coffee
+        </h1>
+        <p class="lead" 
+           style="color: #fff; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); line-height: 1.4;">
+          GOOD COFFEE. GOOD FOOD. GOOD MUSIC = GOOD VIBES~
+        </p>
+      </div>
+
+      <!-- See More Button at Bottom-Right -->
+      <div class="position-absolute bottom-0 end-0 p-4">
+        <a href="https://www.facebook.com/Nitascoffee/" target="_blank" class="btn btn-light">See More</a>
+      </div>
+    </div>
+</header>
+
+<!-- Sliding Carousel -->
+<div id="coffeeCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Sliding Images 1.png" class="d-block w-100" alt="Coffee 1" style="height: 200px;">
+    </div>
+    <div class="carousel-item">
+      <img src="Sliding Images 2.png" class="d-block w-100" alt="Coffee 2" style="height: 200px;">
+    </div>
+  </div>
+</div>
+
+  <!-- Our Story & History Section -->
+  <section id="our-story" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <!-- Our Story Text & Why Choose Us Card -->
+        <div class="col-md-6">
+          <h2 class="display-4 mb-4">Our Story</h2>
+          <p class="lead">Founded in 2019 with a passion for quality coffee, Nita's Coffee has been brewing experiences that blend tradition with innovation. Every cup is crafted with heart and soul.</p>
+          <div class="card p-4 mt-4 shadow-sm hover-glow" style="background: linear-gradient(135deg, #D2B48C, #F5DEB3);">
+            <h3 class="mb-3">Why Choose Us?</h3>
+            <ul>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i> Premium Quality Beans
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i> Expert Baristas
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i> Sustainable Sourcing
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i> Convenient Dining &amp; Cozy Dining Area
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Our Story Images Slider -->
+        <div class="col-md-6">
+          <div id="ourStoryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="The Making.jpg" alt="Our Story 1" class="d-block w-100 img-fluid rounded shadow-sm hover-glow">
+              </div>
+              <div class="carousel-item">
+                <img src="Slider Image3.jpg" alt="Our Story 2" class="d-block w-100 img-fluid rounded shadow-sm hover-glow">
+              </div>
+              <div class="carousel-item">
+                <img src="Slider Image4.jpg" alt="Our Story 3" class="d-block w-100 img-fluid rounded shadow-sm hover-glow">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#ourStoryCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#ourStoryCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Our History Section -->
+      <div class="row align-items-center mt-5">
+        <div class="col-md-6 mb-4">
+          <img src="Founder.jpg" alt="Founder" class="img-fluid rounded shadow-sm hover-glow">
+        </div>
+        <div class="col-md-6">
+          <h2 class="mb-4" style="color: #6F4E37; font-weight: bold;">Our History</h2>
+          <p style="text-align: justify; font-size: 1rem;">
+            Nita's Coffee started in early August 2019 during a pandemic. Owned and founded by Mrs. Genesis Picar Macalipay. It was a big risk to take, especially for first-time business owners. Nonetheless, our founders took the chance to establish a coffee business that soon gained popularity among the neighborhood. It is without a doubt that the growth of Nita's Coffee is remarkable, as we carefully select premium ingredients and ensure every cup meets high-quality standards at a fair price.
+          </p>
+          <p style="text-align: justify; font-size: 1rem;">
+            We spent months perfecting our signature blend, taste-testing 37 different bean varieties until we discovered the perfect balance of boldness and smoothness. Those early days saw us delivering thermoses of experimental brews to our friends, families, and neighbors at dawn, quietly gathering handwritten feedback under doorways before the morning rush.
+          </p>
+          <p style="text-align: justify; font-size: 1rem;">
+            Our first small store operated from a house terrace in a town house village in Sta.Elena Antipolo City during a record-breaking pandemic then now officially expanded &amp; relocated in a bigger area near the Antipolo Cathedral. Regulars still smile remembering how we kept warm by the heat of the roaster, serving cups through a makeshift window carved in the wooden planks. The turning point came when a local customer encouraged his friends &amp; family to visit our first store location – that unexpected occurence became the foundation of our popularity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section id="mission-vision" class="py-5" style="background: linear-gradient(45deg, #6F4E37, #D7B49E);">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 mb-4">
+          <div class="card p-4 shadow-sm hover-glow" style="background: rgba(255,255,255,0.85);">
+            <h3 style="font-family: 'Merriweather', serif; font-size: 1.75rem; font-weight: bold; color: #6F4E37;">
+              Our Mission
+            </h3>
+            <p style="font-family: Georgia, serif; font-size: 1.1rem; color: #333;">
+              To inspire community connections over exceptional coffee, blending tradition with innovation to create a warm and inviting space for all.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card p-4 shadow-sm hover-glow" style="background: rgba(255,255,255,0.85);">
+            <h3 style="font-family: 'Merriweather', serif; font-size: 1.75rem; font-weight: bold; color: #6F4E37;">
+              Our Vision
+            </h3>
+            <p style="font-family: Georgia, serif; font-size: 1.1rem; color: #333;">
+              To be the leading coffee destination where every cup is a journey of taste, culture, and heartfelt experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 display-5">What Our Customers Say</h2>
+    <div class="row g-4">
+      <!-- Testimonial 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm hover-glow" style="background-color: #C9A66B;">
+          <!-- Carousel Slider for Testimonial 1 -->
+          <div id="testimonialCarousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="What our cutomers say1.jpg" class="d-block w-100" alt="Cozy ambiance">
+              </div>
+              <div class="carousel-item">
+                <img src="What our cutomers say2.jpg" class="d-block w-100" alt="Warm coffee">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <p class="card-text">A hidden gem! The frappe's is outstanding and flavorful at the same time. It was creamy and not to sweet and the ambiance is so welcoming as well.</p>
+            <h6 class="card-subtitle mb-2 text-muted"><strong>- Kids / Gradeschools</strong></h6>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm hover-glow" style="background-color: #C9A66B;">
+          <!-- Carousel Slider for Testimonial 2 -->
+          <div id="testimonialCarousel2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="What our cutomers say8.jpg" class="d-block w-100" alt="Quality coffee">
+              </div>
+              <div class="carousel-item">
+                <img src="What our cutomers say6.jpg" class="d-block w-100" alt="Community vibe">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <p class="card-text">A cozy nook for juicy and meaty meals, laid-back chats, and your new favorite cup. Perfect blend of flavor and camaraderie.</p>
+            <h6 class="card-subtitle mb-2 text-muted"><strong>- Students & Friends</strong></h6>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm hover-glow" style="background-color: #C9A66B;">
+          <!-- Carousel Slider for Testimonial 3 -->
+          <div id="testimonialCarousel3" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="What our cutomers say4.jpg" class="d-block w-100" alt="Friendly staff">
+              </div>
+              <div class="carousel-item">
+                <img src="What our cutomers say3.jpg" class="d-block w-100" alt="Artisan drinks">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Cozy couch for a riders and cyclist like us, great company, the meals we're also quality andthe coffee that never disappoints—this place truly hits the sweet spot for every caffeine lover!</p>
+            <h6 class="card-subtitle mb-2 text-muted"><strong>- Riders / Cyclist</strong></h6>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+    <!-- Footer (Common to all pages) -->
+    <footer class="bg-dark text-white mt-5 py-4">
+      <div class="container">
+        <div class="row g-5">
+          <!-- About Us Column -->
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p style="text-align: justify;">
+              Nita's Coffee opened and started running on August, 2019 during the
+              pandemic. Started in a mini shop/store in a town house village, then
+              expanded and relocated during 2024. A unique coffee shop with both reggae
+              and cozy vibes. Their quality coffee drinks makes their shop distinct with
+              others. Soup dishes are also an option but only for those who like soups.
+              Having a band playing while enjoying your coffee and snacks are truly a
+              masterpiece of their coffee shop, which tend to attract more couples and
+              students to spend their leisure time inside the coffee shop.
+            </p>
+            <div>
+              <a href="https://www.facebook.com/Nitascoffee" target="_blank">
+                <img
+                  src="Facebook Logo Footer.png"
+                  alt="Facebook"
+                  width="32"
+                  class="me-2"
+                />
+              </a>
+              <a href="https://www.instagram.com/nitascoffee/" target="_blank">
+                <img src="Instagram Logo Footer.png" alt="Instagram" width="32" />
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <ul class="list-unstyled quick-links">
+              <li>
+                <a href="Home.html" class="text-white">Home</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Nitascoffee/reviews" class="text-white">Reviews</a>
+              </li>
+              <li>
+                <a href="About Us.html" class="text-white">About Us</a>
+              </li>
+              <li>
+                <a href="Contact Us.html" class="text-white">Contact Us</a>
+              </li>
+              <li>
+                <a href="Beverages.html" class="text-white">Beverages</a>
+              </li>
+              <li>
+                <a href="Main Dishes.html" class="text-white">Main Dishes</a>
+              </li>
+              <li>
+                <a href="Snacks_Desserts.html" class="text-white">Snacks/Desserts</a>
+              </li>
+              <li>
+                <a href="Application.html" class="text-white"
+                  >Application Form</a
+                >
+              </li>
+              <li>
+                <a href="Feedback.html" class="text-white"
+                  >Feedback Form</a
+                >
+              </li>
+              <li>
+                <a href="https://maps.app.goo.gl/afw7iy8xa4dpvNVB8" class="text-white">Dine-in</a>
+              </li>              
+              <li>
+                <a href="https://www.lalamove.com/en-ph/driver/exclusive-benefit/food-groceries" class="text-white">Delivery</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Information Column -->
+          <div class="col-md-4 contact-info">
+            <h5>Contact Info</h5>
+            <hr
+              style="border-top: 3px solid #D2691E; width: 35%; margin-top: 0px;"
+            />
+            <p>
+              LOT A, M. Santos Street, Antipolo<br />
+              1870 Rizal, Philippines<br />
+              Phone: +0945 147 3529<br />
+              Email:
+              <a href="mailto:nitascoffee@gmail.com" class="text-white"
+                >nitascoffee@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p class="mb-0 small">
+              &copy; 2025 Christian Iraj Leo Lopez - Nita's Coffee EST.2019
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

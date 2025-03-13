@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitascoffee Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6F4E37;
+            --secondary-color: #F4E9DC;
+            --gradient-primary: linear-gradient(135deg, #6F4E37 0%, #F4E9DC 100%);
+        }
+
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid transparent;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+            border-image: var(--gradient-primary) 1;
+        }
+
+        .gallery-img {
+            transition: all 0.3s ease;
+            backface-visibility: hidden;
+            filter: grayscale(20%);
+        }
+
+        .gallery-card:hover .gallery-img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: rgba(111, 78, 55, 0.9);
+            color: white;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-caption {
+            bottom: 0;
+        }
+
+        @keyframes galleryEntrance {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gallery-item {
+            animation: galleryEntrance 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+		
+		.quick-links a {
+			text-decoration: none;
+			color: inherit;
+		}
+		
+		.quick-links a:hover {
+			text-decoration: none;
+			color: inherit;
+		}
+		.quick-links li {
+			margin-bottom: 0.5rem; /* Adjust this value as needed */
+		}
+		.contact-info p {
+			line-height: 1.8;   /* Adjusts the space between lines */
+			margin: 0 0 1rem 0;  /* Adds margin below the paragraph */
+		}		
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Navigation (Present on all pages) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="https://www.facebook.com/Nitascoffee">
+      <img src="Nitas Coffi Logo.png" alt="Nitascoffee" class="brand-logo d-inline-block align-top" width="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link" href="Home.html">Home</a>
+        </li>
+
+        <!-- About Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="About Us.html#about-us">About Us</a></li>
+            <li><a class="dropdown-item" href="https://www.facebook.com/Nitascoffee/reviews#reviews" target="_blank">Reviews</a></li>
+            <li><a class="dropdown-item" href="Contact Us.html#contact-us">Contact Us</a></li>
+          </ul>
+        </li>
+
+        <!-- Menu Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+            <li><a class="dropdown-item" href="menu.html#beverages">Beverages</a></li>
+            <li><a class="dropdown-item" href="menu.html#main-dishes">Main Dishes</a></li>
+            <li><a class="dropdown-item" href="menu.html#snacks">Snacks/Desserts</a></li>
+            <li><a class="dropdown-item" href="menu.html#japanese-dish">Japanese Dish</a></li>
+          </ul>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="services.html#application-form">Application Form</a></li>
+            <li><a class="dropdown-item" href="services.html#declaration-form">Declaration Form</a></li>
+          </ul>
+        </li>
+
+        <!-- Order Type Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="orderTypeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Order Type
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="orderTypeDropdown">
+            <li><a class="dropdown-item" href="order.html#dine-in">Dine-in</a></li>
+            <li><a class="dropdown-item" href="order.html#delivery">Delivery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header Section -->
+<header class="hero-section text-white" 
+        style="background: url('FInal.jpg') center -820px/cover no-repeat; filter: brightness(0.8); margin: 0; padding: 0; border: 0; border-radius: 15px;">
+  <div class="container-fluid p-0">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container p-0">
+        <a class="navbar-brand fw-bold" href="#">
+          <!-- Replace with your own logo or text -->
+          <img src="logo.png" alt="Logo" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- Hero Content -->
+<div class="hero-content position-relative" style="height: 500px;">
+  <!-- Adjusted dark overlay: starts 20px from the top and spans the remaining height -->
+  <div class="position-absolute start-0 w-100" 
+       style="top: -10px; height: calc(112% - 50px); background-color: rgba(0, 0, 0, 0.5); border-radius: 15px;"></div>
+  <!-- Right-aligned text and button -->
+  <div class="position-absolute top-50 end-0 translate-middle-y pe-4" style="width: 50%;">
+    <h1 class="display-3 fw-bold text-end">Nita's Coffee</h1>
+    <p class="lead text-end">
+      SAVOR BLENDING FLAVORS AT NITA'S—WHERE PERFECTLY BREWED COFFEE'S<br>
+      MEETS ITALIAN & JAPANESE CLASSIC RETRO DISHES.
+    </p>
+    <div class="text-end">
+      <a href="#" class="btn btn-light">See More</a>
+    </div>
+  </div>
+</div>
+</header>
+
+
+    <!-- Image Map -->
+    <div class="row mb-4">
+        <div class="col-md-8 mx-auto">
+            <img src="coffee-map.jpg" usemap="#coffeeMap" class="img-fluid rounded-3">
+            <map name="coffeeMap">
+                <area shape="rect" coords="34,44,270,350" href="menu.html#espresso" alt="Espresso">
+                <area shape="circle" coords="400,200,50" href="menu.html#cappuccino" alt="Cappuccino">
+            </map>
+        </div>
+    </div>
+
+    <!-- Sliding Carousel -->
+    <div id="coffeeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="slide1.jpg" class="d-block w-100" alt="Coffee 1">
+            </div>
+            <div class="carousel-item">
+                <img src="slide2.jpg" class="d-block w-100" alt="Coffee 2">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Gallery Section -->
+    <div class="container mt-5 pt-5">
+        <h2 class="display-4 mb-4 text-center">Our Coffee Gallery</h2>
+        
+        <div class="row gallery g-4">
+            <!-- Gallery Item 1 -->
+            <div class="col-md-4 gallery-item">
+                <div class="gallery-card h-100">
+                    <a href="gallery1.jpg" data-lightbox="coffee-gallery" data-title="Artisan Espresso">
+                        <img src="gallery1-thumb.jpg" alt="Coffee Art" class="gallery-img img-fluid">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5 class="mb-2">Signature Espresso</h5>
+                        <p class="small mb-0">Perfectly extracted with crema top</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="col-md-4 gallery-item">
+                <div class="gallery-card h-100">
+                    <a href="gallery2.jpg" data-lightbox="coffee-gallery" data-title="Latte Art">
+                        <img src="gallery2-thumb.jpg" alt="Latte Art" class="gallery-img img-fluid">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5 class="mb-2">Handcrafted Latte</h5>
+                        <p class="small mb-0">Microfoam masterpiece</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="col-md-4 gallery-item">
+                <div class="gallery-card h-100">
+                    <a href="gallery3.jpg" data-lightbox="coffee-gallery" data-title="Coffee Beans">
+                        <img src="gallery3-thumb.jpg" alt="Coffee Beans" class="gallery-img img-fluid">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5 class="mb-2">Premium Beans</h5>
+                        <p class="small mb-0">Ethically sourced Arabica</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional gallery items -->
+        </div>
+    </div>
+
+<!-- Footer (Common to all pages) -->
+<footer class="bg-dark text-white mt-5 py-4">
+  <div class="container">
+    <div class="row g-5">
+      <!-- About Us Column -->
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <hr style="border-top: 3px solid #D2691E; width: 55%; margin-top: -6px">
+        <p style="text-align: justify;">
+          Nita's Coffee opened and started running on August, 2019 during the pandemic. Started in a mini shop/store in a town house village, then expanded and relocated during 2024. A unique coffee shop with both reggae and cozy vibes. Their quality coffee drinks makes their shop distinct with others. Japanese dishes are also an option in their menu for those who like soups. Having a band playing while enjoying your coffee and snacks are truly a masterpiece of their coffee shop, which tend to attract more couples and students to spend their leisure time inside the coffee shop.
+        </p>
+        <div>
+          <a href="https://www.facebook.com/Nitascoffee" target="_blank">
+            <img src="Facebook Logo Footer.png" alt="Facebook" width="32" class="me-2">
+          </a>
+          <a href="https://www.instagram.com/nitascoffee/" target="_blank">
+            <img src="Instagram Logo Footer.png" alt="Instagram" width="32">
+          </a>
+        </div>
+      </div>
+      <!-- Quick Links Column -->
+<div class="col-md-4">
+  <h5>Quick Links</h5>
+  <hr style="border-top: 3px solid #D2691E; width: 55%; margin-top: -6px">
+  <!-- Added class 'quick-links' to target these links -->
+  <ul class="list-unstyled quick-links">
+    <li><a href="index.html" class="text-white">Home</a></li>
+    <li><a href="menu.html" class="text-white">Menu</a></li>
+    <li><a href="reviews.html" class="text-white">Reviews</a></li>
+    <li><a href="contact.html" class="text-white">Contact Us</a></li>
+    <li><a href="menu.html#main-dishes" class="text-white">Main Dishes</a></li>
+    <li><a href="menu.html#japanese-dishes" class="text-white">Japanese Dishes</a></li>
+    <li><a href="menu.html#snacks" class="text-white">Snacks/Desserts</a></li>
+    <li><a href="menu.html#beverages" class="text-white">Beverages</a></li>
+    <li><a href="services.html#application-form" class="text-white">Application Form</a></li>
+    <li><a href="services.html#declaration-form" class="text-white">Declaration Form</a></li>
+    <li><a href="order.html" class="text-white">Order Type</a></li>
+  </ul>
+</div>
+<!-- Contact Information Column -->
+<div class="col-md-4 contact-info">
+  <h5>Contact Info</h5>
+  <hr style="border-top: 3px solid #D2691E; width: 55%; margin-top: -6px">
+  <p>
+    LOT A, M. Santos Street, Antipolo<br>
+    1870 Rizal, Philippines<br>
+    Phone: +0945 147 3529<br>
+    Email: <a href="mailto:nitascoffee@gmail.com" class="text-white">nitascoffee@gmail.com</a>
+  </p>
+</div>
+    <!-- Copyright Notice -->
+    <div class="text-center mt-3">
+      <p class="mb-0">Copyright &copy; 2025 Christian Iraj Leo Lopez - Nita's Coffee EST.2019</p>
+    </div>
+  </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // Lightbox customization
+        lightbox.option({
+            'wrapAround': true,
+            'albumLabel': 'Image %1 of %2',
+            'fadeDuration': 300,
+            'resizeDuration': 200,
+            'positionFromTop': 20,
+            'showImageNumberLabel': true
+        });
+
+        // Intersection Observer for animation triggers
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.gallery-item').forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
